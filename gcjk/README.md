@@ -11,3 +11,7 @@ A coding challenge for students, by Google
 [Problem B](.2017/practice/b) - Vote
 
 [Problem C](.2017/practice/c) - Sherlock and Parentheses
+
+### Round A
+
+[Problem A](./2017/a/a) - Square Counting
