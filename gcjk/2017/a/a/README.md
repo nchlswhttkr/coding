@@ -2,7 +2,7 @@
 
 ## Google Code Jam Kickstart 2017, Round A, Problem A
 
-[Solution Discussion](#Solution)
+[Solution Discussion](#solution)
 
 [Problem Link](https://code.google.com/codejam/contest/8284486/dashboard#s=p0)
 
@@ -13,7 +13,7 @@ To find a square, a player must identify four dots that form the vertices of a s
 
 Mr. Panda has just been given a grid with **R** rows and **C** columns of dots. How many different squares can he find in this grid? Since the number might be very large, please output the answer modulo 109 + 7 (1000000007).
 
-See [below](#Sample_Cases) for sample cases of a valid square.
+See [below](#sample_cases) for sample cases of a valid square.
 
 ### Input
 The first line of the input gives the number of test cases, **T**. **T** lines follow. Each line has two integers **R** and **C**: the number of dots in each row and column of the grid, respectively.
