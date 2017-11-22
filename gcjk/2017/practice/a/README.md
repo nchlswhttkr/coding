@@ -2,7 +2,7 @@
 
 ## Google Code Jam Kickstart 2017, Practice Round, Problem A
 
-[Solution Discussion](##Solution)
+[Solution Discussion](#Solution)
 
 [Problem Link](https://code.google.com/codejam/contest/6304486/dashboard#s=p0)
 
