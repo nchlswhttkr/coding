@@ -79,12 +79,14 @@ Brute forcing this is not a good idea, as you will need to generate the S<sub>go
 To solve this, I made the following deductions
 
 * Since the left and right substrings about the middle zero are reversed and have their bits flipped, a character _K_ steps to the right of the middle zero will be the same as the character _K_ steps to the left of the middle zero, albeit with its bits flipped
-* Since a string S<sub>N</sub> has a length equal to `2^N - 1`, and a zero is added to the end of this when creating S<sub>N+1</sub>, then the character in the 2^N<sup>th</sup> will be a zero. This can be extended to say that all positions that are a power of 2 in theS<sub>googol</sub> string will be 0 (1, 2, 4, 8, 16...). Funnily enough, these zeroes end up being middle zeroes for each respective string
+* Since a string S<sub>N</sub> has a length equal to `2^N - 1`, and a zero is added to the end of this when creating S<sub>N+1</sub>, then the character in the 2^N<sup>th</sup> will be a zero. This can be extended to say that all positions that are a power of 2 in theS<sub>googol</sub> string will be 0 (1, 2, 4, 8, 16...). Funnily enough, these zeroes end up being middle zeroes for each respective strings
 
 Thus to calculate the character at position _K_ of S<sub>googol</sub>, we calculate the offset from the nearest, smallest middle zero. We calculate this using a log function with base 2, and finding the difference.
 
-If we have a difference of 0, then our character is a middle zero, and we can return that. Otherwise, we know that it is to the right of middle zero, and will have a corresponding position offset to the left, but a bit flip has taken place.
+If we have a difference of 0, then our character is a middle zero, and we can return that. Otherwise, we know that it is to the right of middle zero, and will have a corresponding position offset to the left, but a bit flip has taken place. Knowing this, we now find how many bit flips have taken place to produce the target character offset to the left of the middle zero.
 
 I wrote a recursive function for this, that tracks the total number of times the bit has been flipped, and return this number once we hit a middle zero. Since middle zeros have been inserted into the string instead of created through reversing a string and flipping its bits, we know no earlier bit flips took place. Because some substrings will be flipped again and again because of their position in the string, the final answer is the remainder when the total number of flips that have taken place is divided by 2.
 
-Overall time complexity comes out to about O(log2(K)), and this recursive approach should also allow for optimisation recursive tail calls in certain languages, avoiding issues with the worst case when K is incredibly large, and is always offset from the middle zero with each call.
+Overall time complexity comes out to about O(log2(K)), and this recursive approach should also allow for optimisation with tail calls in certain languages, avoiding issues with the worst case when K is incredibly large, and is always offset from the middle zero with each call.
+
+_Perhaps I should rewrite my solution in C++ to test/demonstrate this, watch this space!_
