@@ -4,14 +4,22 @@ A collection of coding challenges and problems
 
 ## Index
 
+### Advent of Code
+
+A seasonal coding challenge.
+
+[Website](https://adventofcode.com)
+
+[See problems](./advent-of-code)
+
 ### Google Code Jam Kickstart
 
 A coding challenge for students, by Google
 
-[Google Code Jam Kickstart](./gcjk)
+[See problems](./gcjk)
 
 ### Miscellaneous
 
 A collection of problems I have encountered while browsing the internet, and found interesting
 
-[Misc](./misc)
+[See problems](./misc)
