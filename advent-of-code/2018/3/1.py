@@ -5,7 +5,7 @@ import re
 def main():
     fabric_cuts = [[0]*1000 for _ in range(1000)]
 
-    for cut in sys.stdin.readlines():
+    for cut in sys.stdin:
 
         match = re.match(
             r"#[0-9]+ @ ([0-9]+),([0-9]+): ([0-9]+)x([0-9]+)", cut)

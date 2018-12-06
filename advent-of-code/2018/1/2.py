@@ -2,7 +2,7 @@ import sys
 
 
 def main():
-    changes = [int(line) for line in sys.stdin.readlines()]
+    changes = [int(line) for line in sys.stdin]
     acc = 0
     freq = {}
     i = 0

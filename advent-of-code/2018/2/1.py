@@ -3,7 +3,7 @@ import sys
 
 def main():
     twos, threes = 0, 0
-    for box in sys.stdin.readlines():
+    for box in sys.stdin:
         letters = {}
         for l in box:
             letters[l] = letters[l] + 1 if l in letters else 1
