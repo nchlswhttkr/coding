@@ -11,6 +11,7 @@ Choose a day
 [1](#day-1-2018) /
 [2](#day-2-2018) /
 [3](#day-3-2018) /
+[4](#day-4-2018) /
 
 ### Day 1, 2018
 
@@ -83,3 +84,33 @@ Store a matrix representing the fabric, mark the number of cuts that cover each 
 </details>
 
 Iterating over each cut, mark each square with the ID of the first cut to use it. Each cut is considered 'isolated' until another cut overlaps it. If/when a future cut runs over this square, mark both the ID of the first cut to use the square as well the ID of the current cut as no longer 'isolated'. After processing, only one cut is left isolated.
+
+### Day 4, 2018
+
+[See problems](https://adventofcode.com/2018/day/4)
+
+[See code](./2018/4)
+
+The input for the problem on this day needs to be sorted before use. Thankfully the input is presentable, and this can be done with a quick command (`sort input > sorted-input`).
+
+**Part 1**
+
+<details>
+<summary>Show Answer</summary>
+39698
+</details>
+
+The approach for this is based off the assumption that a guard that falls asleep will wake up before their shift is over.
+
+Iterating through each record in the now-sorted input, one of two scenarios will occur: The guards will change, or the current guard will fall asleep and later wake up. Knowing the guards on shift and they times during which they were asleep (from falling asleep to waking up), you can record how many times any particular guard was asleep on any particular minute.
+
+Once this has been computed, you can find the guard who sleep the most and derive your answer from this.
+
+**Part 2**
+
+<details>
+<summary>Show Answer</summary>
+14920
+</details>
+
+Use the same approach as above to compute the frequency with which each guard sleeps on each minute. Instead of finding the guard that sleeps the most, find the guard who is found sleeping the most on any particular minute of their shift, and return the corresponding answer.
