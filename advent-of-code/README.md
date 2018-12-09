@@ -12,6 +12,7 @@ Choose a day
 [2](#day-2-2018) /
 [3](#day-3-2018) /
 [4](#day-4-2018) /
+[5](#day-5-2018) /
 
 ### Day 1, 2018
 
@@ -114,3 +115,31 @@ Once this has been computed, you can find the guard who sleep the most and deriv
 </details>
 
 Use the same approach as above to compute the frequency with which each guard sleeps on each minute. Instead of finding the guard that sleeps the most, find the guard who is found sleeping the most on any particular minute of their shift, and return the corresponding answer.
+
+### Day 5, 2018
+
+[See problems](https://adventofcode.com/2018/day/5)
+
+[See code](./2018/5)
+
+**Part 1**
+
+<details>
+<summary>Show Answer</summary>
+11754
+</details>
+
+To solve this problem, you will need to use a struct that supports backwards navigation, such as a double linked list or a stack, the latter being simpler to implement I went with that first.
+
+Iterating through the polymer, characters are pushed to the stack so long as the do not react with the character at the top of the stack. Reacting characters will be clear the top of the stack.
+
+**Part 2**
+
+<details>
+<summary>Show Answer</summary>
+4098
+</details>
+
+Apply the same approach as in part 1, trying with each letter removed (first _Aa_, then _Bb_, etc...). Find the smallest result.
+
+Luckily, Python strings have a `translate` method for each character removal.
