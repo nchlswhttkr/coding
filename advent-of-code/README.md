@@ -13,6 +13,7 @@ Choose a day
 [3](#day-3-2018) /
 [4](#day-4-2018) /
 [5](#day-5-2018) /
+[6](#day-6-2018) /
 
 ### Day 1, 2018
 
@@ -143,3 +144,59 @@ Iterating through the polymer, characters are pushed to the stack so long as the
 Apply the same approach as in part 1, trying with each letter removed (first _Aa_, then _Bb_, etc...). Find the smallest result.
 
 Luckily, Python strings have a `translate` method for each character removal.
+
+### Day 6, 2018
+
+[See problems](https://adventofcode.com/2018/day/6)
+
+[See code](./2018/6)
+
+**Part 1**
+
+~~TODO: reduce tuples to use only region id~~
+
+<details>
+<summary>Show Answer</summary>
+5975
+</details>
+
+This is a slight improvement over the naive approach (iterate through each square of the grid and assign it to the closest point/region center).
+
+Instead, go through point, which will be the center of the region. Starting from the region center and expanding out with growing radius. Continue adding squares to the given region (if acceptable), until no new squares added to the region; You have reached the perimeter of the region.
+
+This radiating pattern forms a skewed square, because the radius extends in Manhattan distance.
+
+```
+RADIUS = 0
+. . . .
+. . . .
+. . O .
+. . . .
+
+RADIUS = 1
+. . . .
+. . X .
+. X O X
+. . X .
+
+RADIUS = 2
+. . X .
+. X X X
+X X O X
+. X X X
+```
+
+Squares can be added to a region so long as there is no previously-covered region center that is closer.
+
+Regions that reach the perimeter of the grid are disqualified, because they will extend infinitely.
+
+Once all regions have been processed, find the largest valid (finite) region.
+
+**Part 2**
+
+<details>
+<summary>Show Answer</summary>
+38670
+</details>
+
+Each square of the grid starts off with a budgeted distance of `10000`. Each point/region center draws on this. Acceptable regions start with
