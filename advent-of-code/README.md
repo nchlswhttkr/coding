@@ -160,9 +160,9 @@ Luckily, Python strings have a `translate` method for each character removal.
 5975
 </details>
 
-This is a slight improvement over the naive approach (iterate through each square of the grid and assign it to the closest point/region center).
+This is a slight improvement over the naive approach (iterate through each square of the grid and assign it to the closest point).
 
-Instead, go through point, which will be the center of the region. Starting from the region center and expanding out with growing radius. Continue adding squares to the given region (if acceptable), until no new squares added to the region; You have reached the perimeter of the region.
+Instead, go through each point, which will be the center of its own region. Start from the region center (the current point) and expand out with a growing radius. Continue adding squares to the current region (if acceptable), until no new squares added to the region; You have reached the perimeter of the region. This is a case for an early exit.
 
 This radiating pattern forms a skewed square, because the radius extends in Manhattan distance.
 
