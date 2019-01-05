@@ -3,3 +3,5 @@
 A collection of problems I have encountered while browsing the internet, and found interesting
 
 [Fizzbuzz](./fizzbuzz) - A counting challenge
+
+[Isolated Islands](./isolated-islands) - Finding clumps of points in a 2D plane
