@@ -3,7 +3,7 @@ import math
 
 def calculate_googol_string(K, flip_occurences=0):
     assert K > 0, 'K must be greater than 0 to have a position on the Sgoogol string'
-    middle = 2 ** math.floor(math.log2(K))
+    middle = 2 ** int(math.log2(K))
     offset = K - middle
     if offset == 0:
         return flip_occurences

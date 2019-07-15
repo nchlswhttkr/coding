@@ -1,106 +1,77 @@
-# Advent of Code
-
-[Website](https://adventofcode.com)
+# [Advent of Code](https://adventofcode.com)
 
 A seasonal coding challenge.
 
-## 2018
-
-Choose a day
-
+**2018** -
 [1](#day-1-2018) /
 [2](#day-2-2018) /
 [3](#day-3-2018) /
 [4](#day-4-2018) /
 [5](#day-5-2018) /
 [6](#day-6-2018) /
+[7](#day-6-2018) /
 
-### Day 1, 2018
+---
 
-[See problems](https://adventofcode.com/2018/day/1)
+### [Day 1, 2018](https://adventofcode.com/2018/day/1)
 
-[See code](./2018/1)
-
-**Part 1**
-
-<details>
-<summary>Show Answer</summary>
-423
-</details>
+[**Part 1**](./2018/1/1.py)
 
 Sum the inputs to find the eventual frequency.
 
-**Part 2**
-
-<details>
-<summary>Show Answer</summary>
-61126
-</details>
+[**Part 2**](./2018/1/2.py)
 
 Continually iterate through the list of inputs, use some form of hash map to mark which frequencies have already been visited. Find the first repetition.
 
-### Day 2, 2018
-
-[See problems](https://adventofcode.com/2018/day/2)
-
-[See code](./2018/2)
-
-**Part 1**
-
 <details>
-<summary>Show Answer</summary>
-9139
+<summary>Answers</summary>
+423
+
+61126
+
 </details>
+
+### [Day 2, 2018](https://adventofcode.com/2018/day/2)
+
+[**Part 1**](./2018/2/1.py)
 
 Use a hash map/array to store the number of occurences of each character, increment counters for each word that meets criteria (contains a character with two/three occurences).
 
-**Part 2**
-
-<details>
-<summary>Show Answer</summary>
-uqcidadzwtnhsljvxyobmkfyr
-</details>
+[**Part 2**](./2018/2/2.py)
 
 Compare all words against each other, and build a string from the characters of the two words that match (same position and value). Output the longest string produced by this to find the closest matching words.
 
-### Day 3, 2018
-
-[See problems](https://adventofcode.com/2018/day/3)
-
-[See code](./2018/3)
-
-**Part 1**
-
 <details>
-<summary>Show Answer</summary>
-121163
+<summary>Answers</summary>
+9139
+
+uqcidadzwtnhsljvxyobmkfyr
+
 </details>
+
+### [Day 3, 2018](https://adventofcode.com/2018/day/3)
+
+[**Part 1**](./2018/3/1.py)
 
 Store a matrix representing the fabric, mark the number of cuts that cover each square. The final result is the number of squares with 2 or more cuts using it.
 
-**Part 2**
-
-<details>
-<summary>Show Answer</summary>
-943
-</details>
+[**Part 2**](./2018/3/2.py)
 
 Iterating over each cut, mark each square with the ID of the first cut to use it. Each cut is considered 'isolated' until another cut overlaps it. If/when a future cut runs over this square, mark both the ID of the first cut to use the square as well the ID of the current cut as no longer 'isolated'. After processing, only one cut is left isolated.
 
-### Day 4, 2018
+<details>
+<summary>Answers</summary>
+121163
 
-[See problems](https://adventofcode.com/2018/day/4)
+943
 
-[See code](./2018/4)
+</details>
+
+### [Day 4, 2018](https://adventofcode.com/2018/day/4)
 
 The input for the problem on this day needs to be sorted before use. Thankfully the input is presentable, and this can be done with a quick command (`sort input > sorted-input`).
 
-**Part 1**
-
-<details>
-<summary>Show Answer</summary>
-39698
-</details>
+[**Part 1**](./2018/4/1.py)
 
 The approach for this is based off the assumption that a guard that falls asleep will wake up before their shift is over.
 
@@ -108,57 +79,45 @@ Iterating through each record in the now-sorted input, one of two scenarios will
 
 Once this has been computed, you can find the guard who sleep the most and derive your answer from this.
 
-**Part 2**
-
-<details>
-<summary>Show Answer</summary>
-14920
-</details>
+[**Part 2**](./2018/4/2.py)
 
 Use the same approach as above to compute the frequency with which each guard sleeps on each minute. Instead of finding the guard that sleeps the most, find the guard who is found sleeping the most on any particular minute of their shift, and return the corresponding answer.
 
-### Day 5, 2018
-
-[See problems](https://adventofcode.com/2018/day/5)
-
-[See code](./2018/5)
-
-**Part 1**
-
 <details>
-<summary>Show Answer</summary>
-11754
+<summary>Answers</summary>
+39698
+
+14920
+
 </details>
+
+### [Day 5, 2018](https://adventofcode.com/2018/day/5)
+
+[**Part 1**](./2018/5/1.py)
 
 To solve this problem, you will need to use a struct that supports backwards navigation, such as a double linked list or a stack, the latter being simpler to implement I went with that first.
 
 Iterating through the polymer, characters are pushed to the stack so long as the do not react with the character at the top of the stack. Reacting characters will be clear the top of the stack.
 
-**Part 2**
-
-<details>
-<summary>Show Answer</summary>
-4098
-</details>
+[**Part 2**](./2018/5/2.py)
 
 Apply the same approach as in part 1, trying with each letter removed (first _Aa_, then _Bb_, etc...). Find the smallest result.
 
 Luckily, Python strings have a `translate` method for each character removal.
 
-### Day 6, 2018
+<details>
+<summary>Answers</summary>
+11754
 
-[See problems](https://adventofcode.com/2018/day/6)
+4098
 
-[See code](./2018/6)
+</details>
 
-**Part 1**
+### [Day 6, 2018](https://adventofcode.com/2018/day/6)
+
+[**Part 1**](./2018/6/1.py)
 
 ~~TODO: reduce tuples to use only region id~~
-
-<details>
-<summary>Show Answer</summary>
-5975
-</details>
 
 This is a slight improvement over the naive approach (iterate through each square of the grid and assign it to the closest point).
 
@@ -192,11 +151,25 @@ Regions that reach the perimeter of the grid are disqualified, because they will
 
 Once all regions have been processed, find the largest valid (finite) region.
 
-**Part 2**
-
-<details>
-<summary>Show Answer</summary>
-38670
-</details>
+[**Part 2**](./2018/6/2.py)
 
 Each square of the grid starts off with a budgeted distance of `10000`. Each point/region center draws on this. Acceptable regions start with
+
+<details>
+<summary>Answers</summary>
+5975
+
+38670
+
+</details>
+
+### [Day 7, 2018](https://adventofcode.com/2018/day/7)
+
+[**Part 1**](./2018/7/1.py)
+
+This requires a topological sort
+
+<details>
+<summary>Answers</summary>
+ABLCFNSXZPRHVEGUYKDIMQTWJO
+</details>
