@@ -1,0 +1,3 @@
+[submodule "interviews/readify-toy-robot"]
+	path = interviews/readify-toy-robot
+	url = git@github.com:nchlswhttkr/readify-toy-robot.git
