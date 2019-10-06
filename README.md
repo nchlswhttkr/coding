@@ -24,6 +24,6 @@ This also includes questions I have been given in interviews and liked. Publishe
 
 ### Interviews
 
-These are coding problems I've been given in an interview/application. They're submodules linking off to **repositories that are likely private**, so you may not be able to see them.
+These are coding problems I've been given in an interview/application. They're submodules linking off to **repositories that may be private**, so you may not be able to see them.
 
 [Problems](./interviews)

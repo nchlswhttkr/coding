@@ -1,3 +1,6 @@
 [submodule "interviews/readify-toy-robot"]
 	path = interviews/readify-toy-robot
 	url = git@github.com:nchlswhttkr/readify-toy-robot.git
+[submodule "interviews/monplan-challenge"]
+	path = interviews/monplan-challenge
+	url = git@github.com:nchlswhttkr/monplan-challenge.git
