@@ -11,7 +11,12 @@ A seasonal coding challenge.
 [6](#day-6-2018) /
 [7](#day-6-2018) /
 
+**2019** -
+[1](#day-1-2019) /
+
 ---
+
+## 2018
 
 ### [Day 1, 2018](https://adventofcode.com/2018/day/1)
 
@@ -172,4 +177,25 @@ This requires a topological sort
 <details>
 <summary>Answers</summary>
 ABLCFNSXZPRHVEGUYKDIMQTWJO
+</details>
+
+---
+
+## 2019 
+
+### [Day 1, 2019](https://adventofcode.com/2019/day/1)
+
+[**Part 1**](./2019/01/1.py)
+
+Sum the fuel volumes needed for each module.
+
+[**Part 2**](./2019/01/1.py)
+
+Sum the fuel volumes needed for each module, in addition to the fuel volumes needed for all significant fuel volumes (positive volumes).
+
+<details>
+<summary>Answers</summary>
+3317659
+
+4973616
 </details>
