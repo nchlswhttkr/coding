@@ -13,6 +13,7 @@ A seasonal coding challenge.
 
 **2019** -
 [1](#day-1-2019) /
+[2](#day-2-2019) /
 
 ---
 
@@ -181,7 +182,7 @@ ABLCFNSXZPRHVEGUYKDIMQTWJO
 
 ---
 
-## 2019 
+## 2019
 
 ### [Day 1, 2019](https://adventofcode.com/2019/day/1)
 
@@ -198,4 +199,27 @@ Sum the fuel volumes needed for each module, in addition to the fuel volumes nee
 3317659
 
 4973616
+
+</details>
+
+### [Day 2, 2019](https://adventofcode.com/2019/day/2)
+
+You don't need to worry about encountering bad opcodes or wrapping back around to the start of the program.
+
+[**Part 1**](./2019/02/1.py)
+
+Implement the program as specified, processing the opcodes `0`, `1` and `99`. Don't forget to set the program to the "1202 alarm state".
+
+The tricky case is where you modify the current opcode and accidentally perform a second instruction. For example, `1,0,0,0,99` would produce `4` if you first changed the opcode to `2` and then did multiplication. You can fix this by storing the opcode in a variable, I just used an else/if.
+
+[**Part 2**](./2019/02/1.py)
+
+Using your code from part 1, brute force all possible verb and noun combinations for the program until you find one which outputs the target. As the problem says, make sure your program is reset after each run.
+
+<details>
+<summary>Answers</summary>
+8017076
+
+3146
+
 </details>
