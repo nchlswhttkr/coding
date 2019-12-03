@@ -14,6 +14,7 @@ A seasonal coding challenge.
 **2019** -
 [1](#day-1-2019) /
 [2](#day-2-2019) /
+[3](#day-3-2019) /
 
 ---
 
@@ -221,5 +222,39 @@ Using your code from part 1, brute force all possible verb and noun combinations
 8017076
 
 3146
+
+</details>
+
+### [Day 3, 2019](https://adventofcode.com/2019/day/3)
+
+You can do this more efficiently with a hash map rather than a grid, this was just easier for me to reason with.
+
+You could also consider storing the paths of the two wires in sorted arrays of coordinates. You could process this in a similar way to a merge sort, with a pointer for each array that only needs to iterate through their respective array once.
+
+Turns out you don't need to worry about assumptions like whether the wires always cross, or deal with the edge case where they cross over the central port.
+
+[**Part 1**](./2019/03/1.py)
+
+Treat the board as a cartesian plane, you can find the size with an initial pass. For this part, I made an array of `false`s the size of the board.
+
+Starting from `(0, 0)`, place the first wire. Lay out the wire by marking `true` on each coordinate you cover. Remember to _mark the path between corners_, not just the corners themselves.
+
+Now laying out the second wire, calculate the distance from the origin every time you find a `true` coordinate. Report the shortest distance found.
+
+Make sure you don't accidentally include the wires when they originate from the central port.
+
+[**Part 2**](./2019/03/1.py)
+
+Now we're using steps taken (length) as our metric instead of cartesian distance from central port.
+
+Similar to the first part, except now you have to record the distance (as in length of wire) from the central port for the first wire on your board (`0 1 2 ... N` instead of `true`/`false`). Make sure you don't overwrite a shorter distance when laying out the first wire.
+
+The procedure for laying the second wire should be similarly adjusted, recording the length of the two wires when they intersect. Report the shortest combined length needed to intercept.
+
+<details>
+<summary>Answers</summary>
+248
+
+28580
 
 </details>
