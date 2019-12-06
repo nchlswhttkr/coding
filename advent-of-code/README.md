@@ -15,6 +15,9 @@ A seasonal coding challenge.
 [1](#day-1-2019) /
 [2](#day-2-2019) /
 [3](#day-3-2019) /
+[4](#day-4-2019) /
+[5](#day-5-2019) /
+[6](#day-6-2019) /
 
 ---
 
@@ -256,5 +259,61 @@ The procedure for laying the second wire should be similarly adjusted, recording
 248
 
 28580
+
+</details>
+
+### [Day 4, 2019](https://adventofcode.com/2019/day/4)
+
+[**Part 1**](./2019/04/1.py)
+
+Brute force check each number in the range.
+
+[**Part 2**](./2019/04/1.py)
+
+Same as part 1. If the string doesn't change when it is sorted, then it is in ascending order. If you put each character in a hash map, as long as 2 exists in the value table then a pair of sequential characters exists (since the digits are ordered).
+
+<details>
+<summary>Answers</summary>
+1748
+
+1180
+
+</details>
+
+### [Day 5, 2019](https://adventofcode.com/2019/day/5)
+
+Note each day has different input because they examine different "systems", in this case `1` and `5` for parts 1 and 2 respectively.
+
+[**Part 1**](./2019/05/1.py)
+
+Adapt your solution from day 2. I introduced the `interpret_args()` function to find the "memory" locations that each argument points to, since you need to consider the mode of the argument as well. You can use the handy snippet `X // 10 ** N % 10` to find the `N + 1`<sup>th</sup> digit of a given number `X`.
+
+[**Part 2**](./2019/05/1.py)
+
+Extending the solution from part 1 with extra opcodes and their accompanying logic. Luckily, you can reuse the same `interpret_args()` logic without adjusting it.
+
+<details>
+<summary>Answers</summary>
+13210611
+
+584126
+
+</details>
+
+### [Day 6, 2019](https://adventofcode.com/2019/day/6)
+
+[**Part 1**](./2019/06/1.py)
+
+Each planet either orbits nothing or orbits one other planet (a parent-child) relationship. Record each planet's planet if one exists. Calculate the total orbit count by measuring the number of parents and transitive parents for each planet.
+
+[**Part 2**](./2019/06/1.py)
+
+Build two lists from `YOU` and `SAN` that go all the way up to the root planet. Find the closest related common parent. The number of "orbital transfers" or jumps will be the length of the paths to the common parent from the two planets.
+
+<details>
+<summary>Answers</summary>
+186597
+
+412
 
 </details>
