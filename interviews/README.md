@@ -5,3 +5,5 @@ These are coding problems I've been given in an interview/application. They're s
 [MonPlan Challenge](https://github.com/nchlswhttkr/monplan-challenge)
 
 [Readify Toy Robot](https://github.com/nchlswhttkr/readify-toy-robot)
+
+[Localz Challenge](https://github.com/nchlswhttkr/localz-challenge)

@@ -4,3 +4,6 @@
 [submodule "interviews/monplan-challenge"]
 	path = interviews/monplan-challenge
 	url = git@github.com:nchlswhttkr/monplan-challenge.git
+[submodule "interviews/localz-challenge"]
+	path = interviews/localz-challenge
+	url = git@github.com:nchlswhttkr/localz-challenge.git
