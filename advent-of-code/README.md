@@ -18,6 +18,11 @@ A seasonal coding challenge.
 [4](#day-4-2019) /
 [5](#day-5-2019) /
 [6](#day-6-2019) /
+[7](#day-7-2019) /
+[8](#day-8-2019) /
+[9](#day-9-2019) /
+[10](#day-10-2019) /
+[11](#day-11-2019) /
 
 ---
 
@@ -194,7 +199,7 @@ ABLCFNSXZPRHVEGUYKDIMQTWJO
 
 Sum the fuel volumes needed for each module.
 
-[**Part 2**](./2019/01/1.py)
+[**Part 2**](./2019/01/2.py)
 
 Sum the fuel volumes needed for each module, in addition to the fuel volumes needed for all significant fuel volumes (positive volumes).
 
@@ -216,7 +221,7 @@ Implement the program as specified, processing the opcodes `0`, `1` and `99`. Do
 
 The tricky case is where you modify the current opcode and accidentally perform a second instruction. For example, `1,0,0,0,99` would produce `4` if you first changed the opcode to `2` and then did multiplication. You can fix this by storing the opcode in a variable, I just used an else/if.
 
-[**Part 2**](./2019/02/1.py)
+[**Part 2**](./2019/02/2.py)
 
 Using your code from part 1, brute force all possible verb and noun combinations for the program until you find one which outputs the target. As the problem says, make sure your program is reset after each run.
 
@@ -246,7 +251,7 @@ Now laying out the second wire, calculate the distance from the origin every tim
 
 Make sure you don't accidentally include the wires when they originate from the central port.
 
-[**Part 2**](./2019/03/1.py)
+[**Part 2**](./2019/03/2.py)
 
 Now we're using steps taken (length) as our metric instead of cartesian distance from central port.
 
@@ -268,7 +273,7 @@ The procedure for laying the second wire should be similarly adjusted, recording
 
 Brute force check each number in the range.
 
-[**Part 2**](./2019/04/1.py)
+[**Part 2**](./2019/04/2.py)
 
 Same as part 1. If the string doesn't change when it is sorted, then it is in ascending order. If you put each character in a hash map, as long as 2 exists in the value table then a pair of sequential characters exists (since the digits are ordered).
 
@@ -288,7 +293,7 @@ Note each day has different input because they examine different "systems", in t
 
 Adapt your solution from day 2. I introduced the `interpret_args()` function to find the "memory" locations that each argument points to, since you need to consider the mode of the argument as well. You can use the handy snippet `X // 10 ** N % 10` to find the `N + 1`<sup>th</sup> digit of a given number `X`.
 
-[**Part 2**](./2019/05/1.py)
+[**Part 2**](./2019/05/2.py)
 
 Extending the solution from part 1 with extra opcodes and their accompanying logic. Luckily, you can reuse the same `interpret_args()` logic without adjusting it.
 
@@ -306,7 +311,7 @@ Extending the solution from part 1 with extra opcodes and their accompanying log
 
 Each planet either orbits nothing or orbits one other planet (a parent-child) relationship. Record each planet's planet if one exists. Calculate the total orbit count by measuring the number of parents and transitive parents for each planet.
 
-[**Part 2**](./2019/06/1.py)
+[**Part 2**](./2019/06/2.py)
 
 Build two lists from `YOU` and `SAN` that go all the way up to the root planet. Find the closest related common parent. The number of "orbital transfers" or jumps will be the length of the paths to the common parent from the two planets.
 
@@ -317,3 +322,118 @@ Build two lists from `YOU` and `SAN` that go all the way up to the root planet. 
 412
 
 </details>
+
+### [Day 7, 2019](https://adventofcode.com/2019/day/7)
+
+[**Part 1**](./2019/07/1.py)
+
+Set up 5 Intcode machine in series, run for each permutation for each thruster signal.
+
+[**Part 2**](./2019/07/2.py)
+
+Set up some form of buffer for each Intcode machine (I used queues). As a machine runs, it should write to the next machine's buffer and read from its own buffer.
+
+Run the first machine until it tries to read from an empty buffer. Run the second machine until it tries to read from an empty buffer. Keep repeating this feedback loop until a machine halts.
+
+<details>
+<summary>Answers</summary>
+338603
+
+63103596
+
+</details>
+
+### [Day 8, 2019](https://adventofcode.com/2019/day/8)
+
+[**Part 1**](./2019/08/1.py)
+
+Do as specified.
+
+[**Part 2**](./2019/08/2.py)
+
+No need to build layers here, just stored the image as one long string.
+
+Begin with a transparent image (all `2`s). For every character in the string, find out which cell of the image it belongs to. If this cell is currently transparent, colour it appropriately.
+
+Since we have gone from the start of the string and only colour transparent cells, coloured cells from earlier layers will not be overwritten.
+
+<details>
+<summary>Answers</summary>
+1452
+
+PHPEU
+
+</details>
+
+### [Day 9, 2019](https://adventofcode.com/2019/day/9)
+
+[**Part 1**](./2019/09/1.py)
+
+Update to your Intcode program to allow reading from larger memory sizes. I implemented a dictionary-like object that returned 0 instead `KeyError`s for unaddressed memory.
+
+[**Part 2**](./2019/09/2.py)
+
+Run the program with the new input.
+
+<details>
+<summary>Answers</summary>
+2427443564
+
+87221
+
+</details>
+
+### [Day 10, 2019](https://adventofcode.com/2019/day/10)
+
+[**Part 1**](./2019/10/1.py)
+
+Comparing each asteroid against every other asteroid, store the angle between them as an X and Y step. Make sure identical angles with different step sizes are not counted twice (ie `(1, 1)` and `(2, 2)` have the same 45deg angle). In that case, the closer asteroid to our current asteroid has a smaller step distance and is blocked the further asteroid.
+
+You only need to compare each asteroid with each asteroid after it, because the step from B to A will just be the step from A to B reversed.
+
+[**Part 2**](./2019/10/2.py)
+
+Keep the angle-preserving component and instead build a list of asteroids along a certain angle, sorted from furthest to closest.
+
+Sort the angles of your origin asteroid, starting from 0deg to 360deg clockwise (that's why I did all the stuff with `get_angle_from_key()`). Loop through the list of asteroid at each angle, "vaporising" the closest one by popping it from the stack.
+
+<details>
+<summary>Answers</summary>
+263
+
+1110
+
+</details>
+
+## [Day 11, 2019](https://adventofcode.com/2019/day/11)
+
+It was at this point that I learned about the fantastic defaultdict in Python.
+
+[**Part 1**](./2019/11/1.py)
+
+Adapt your Intcode program to traverse and colour the board as described.
+
+My program writes to a buffer, and every time there are at least two outputs in the buffer it uses the first two to colour and turn as instructed.
+
+[**Part 2**](./2019/11/2.py)
+
+Record the size of the board the program covers (furthest distances from origin in X and Y axes), and use this generate your image. Rerun with the new white starting square.
+
+<details>
+<summary>Answers</summary>
+2082
+
+FARBCFJK
+
+</details>
+
+<!--
+## [Day DAYNUM, 2019](https://adventofcode.com/2019/day/DAYNUM)
+
+[**Part 1**](./2019/DAYNUM/1.py)
+[**Part 2**](./2019/DAYNUM/2.py)
+
+<details>
+<summary>Answers</summary>
+</details>
+-->
