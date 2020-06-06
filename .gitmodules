@@ -7,3 +7,6 @@
 [submodule "interviews/localz-challenge"]
 	path = interviews/localz-challenge
 	url = git@github.com:nchlswhttkr/localz-challenge.git
+[submodule "interviews/seek-grad-coding-challenge"]
+	path = interviews/seek-grad-coding-challenge
+	url = git@github.com:nchlswhttkr/seek-grad-coding-challenge.git
