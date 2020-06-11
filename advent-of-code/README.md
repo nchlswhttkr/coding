@@ -23,6 +23,7 @@ A seasonal coding challenge.
 [9](#day-9-2019) /
 [10](#day-10-2019) /
 [11](#day-11-2019) /
+[12](#day-12-2019) /
 
 ---
 
@@ -424,6 +425,26 @@ Record the size of the board the program covers (furthest distances from origin 
 2082
 
 FARBCFJK
+
+</details>
+
+## [Day 12, 2019](https://adventofcode.com/2019/day/12)
+
+[**Part 1**](./2019/12/1.py)
+
+Not too much to add here, just calculate the velocity change for each pair of moons and then update their positions afterwards.
+
+[**Part 2**](./2019/12/2.py)
+
+Each dimension is independent. Information about the X dimension has no bearing on the Y or Z dimensions.
+
+Finding the number of steps in cycle for the entire system would take unreasonably long. However, it's possible to find the number of steps for a cycle in each dimension. The period of the system's cycle will be the lowest common multiple of the periods of each dimension's cycle. That is, when the moons return to their original position in the X, Y, and Z dimension at the same time, the system has completed a cycle.
+
+<details>
+<summary>Answers</summary>
+7758
+
+354540398381256
 
 </details>
 
