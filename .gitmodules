@@ -10,3 +10,6 @@
 [submodule "interviews/seek-grad-coding-challenge"]
 	path = interviews/seek-grad-coding-challenge
 	url = git@github.com:nchlswhttkr/seek-grad-coding-challenge.git
+[submodule "interviews/iress-grad-coding-challenge"]
+	path = interviews/iress-grad-coding-challenge
+	url = git@github.com:nchlswhttkr/iress-grad-coding-challenge.git
