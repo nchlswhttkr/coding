@@ -25,6 +25,10 @@ A seasonal coding challenge.
 [11](#day-11-2019) /
 [12](#day-12-2019) /
 
+**2020** -
+[1](#day-1-2020) /
+[2](#day-2-2020) /
+
 ---
 
 ## 2018
@@ -448,13 +452,42 @@ Finding the number of steps in cycle for the entire system would take unreasonab
 
 </details>
 
-<!--
-## [Day DAYNUM, 2019](https://adventofcode.com/2019/day/DAYNUM)
+## [Day 1, 2020](https://adventofcode.com/2020/day/1)
 
-[**Part 1**](./2019/DAYNUM/1.py)
-[**Part 2**](./2019/DAYNUM/2.py)
+[**Part 1**](./2020/01/1.py)
+
+As always, we start with an introductory problem. You could sum each pair of numbers to find 2020 (O(**N**<sup>2</sup>) is fine), or you could use a hash table/set to quickly determine whether a number's counterpart has appeared.
+
+I initially used Python's dictionary structure, but it turns out they also support [plain sets](https://docs.python.org/3/library/stdtypes.html#set), which is a little cleaner and (I assume) faster.
+
+[**Part 2**](./2020/01/2.py)
+
+Finding a trio takes a little longer, but given we're only dealing with 200 numbers we don't need to concern ourselves too much with performance.
+
+The do a little better than O(**N**<sup>3</sup>), we can use a set again to record which numbers have previously appeared. With each new number, try adding it with each existing number, subtracting the sum from 2020. If the difference has _also_ appeared previously, then we have our trio of numbers.
 
 <details>
 <summary>Answers</summary>
+960075
+
+212900130
+
 </details>
--->
+
+## [Day 2, 2020](https://adventofcode.com/2020/day/2)
+
+[**Part 1**](./2020/02/1.py)
+
+Break down the input string for necessary arguments, count which password abide by the rule. Conveniently, Python has standard functions for counting substrings/characters.
+
+[**Part 2**](./2020/02/2.py)
+
+Reuse the previous code, but check that the character appears exactly once. You're looking for the XOR operator for this one.
+
+<details>
+<summary>Answers</summary>
+474
+
+745
+
+</details>
