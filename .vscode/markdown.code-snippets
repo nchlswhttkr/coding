@@ -1,0 +1,26 @@
+{
+  "Advent of Code Problem Discussion": {
+    "prefix": "advent-of-code-discussion",
+    "scope": "markdown",
+    "body": [
+      "## [Day $1, ${2:$CURRENT_YEAR}](https://adventofcode.com/$2/day/$1)",
+      "",
+      "[**Part 1**](./$2/$3/1.py)",
+      "",
+      "${4:Discussion for problem 1}",
+      "",
+      "[**Part 2**](./$2/$3/2.py)",
+      "",
+      "${5:Discussion for problem 2}",
+      "",
+      "<details>",
+      "<summary>Answers</summary>",
+      "${6:Answer for problem 1}",
+      "",
+      "${7:Answer for problem 2}",
+      "",
+      "</details>"
+    ],
+    "description": "Advent of Code Problem Discussion"
+  }
+}
