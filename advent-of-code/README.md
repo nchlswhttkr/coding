@@ -28,6 +28,9 @@ A seasonal coding challenge.
 **2020** -
 [1](#day-1-2020) /
 [2](#day-2-2020) /
+[3](#day-3-2020) /
+[4](#day-4-2020) /
+[5](#day-5-2020) /
 
 ---
 
@@ -489,5 +492,69 @@ Reuse the previous code, but check that the character appears exactly once. You'
 474
 
 745
+
+</details>
+
+## [Day 3, 2020](https://adventofcode.com/2020/day/3)
+
+[**Part 1**](./2020/03/1.py)
+
+The straightforward approach for me was to just let this iteration run. Go through each row, updating your position and checking for a tree. Each step is just an offset from the last position, in this case (+1, +3).
+
+If you want to be fancy, you can compute the X-offset as a product of the Y-offset. If you're **N** rows down from the start, you're 3**N** steps right from the origin.
+
+Remember that the map wraps around!
+
+[**Part 2**](./2020/03/2.py)
+
+Runs the iteration several times for each slope.
+
+<details>
+<summary>Answers</summary>
+207
+
+2655892800
+
+</details>
+
+## [Day 4, 2020](https://adventofcode.com/2020/day/4)
+
+[**Part 1**](./2020/04/1.py)
+
+Iterate through each passport, skipping passports that lack a required field. You only need to check for the key's presence at this point!
+
+[**Part 2**](./2020/04/2.py)
+
+Extend your part 1 solution to check that the value for each field meets requirements. Since each field is independent, you can do these checks at the same time that you verify a field's presence.
+
+Python's `lambda` keyword is great for quickly declaring these small functions.
+
+**Bonus**: My [very ugly 5-line solution](./2020/04/2.bad.py) for part 2.
+
+<details>
+<summary>Answers</summary>
+256
+
+198
+
+</details>
+
+## [Day 5, 2020](https://adventofcode.com/2020/day/5)
+
+[**Part 1**](./2020/05/1.py)
+
+You're making a binary converter! The row/column numbers are denoted by their own binary digits (`B`/`F` and `R`/`L` respectively). The row number needs to be multiplied by 8 (2<sup>3</sup>) because the last three digits denote the column.
+
+If your language supports string to integer conversion with different bases (in this case, 2), you can convert your seat to a string of `1`s and `0`s before parsing it to an integer.
+
+[**Part 2**](./2020/05/2.py)
+
+In addition to finding the highest occupied seat ID, record which seat IDs you've seen. Afterwards, decrementing from the highest occupied seat until you find an unoccupied seat will give you your answer.
+
+<details>
+<summary>Answers</summary>
+996
+
+671
 
 </details>

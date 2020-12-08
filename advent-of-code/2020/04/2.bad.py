@@ -1,0 +1,4 @@
+import re, sys
+def validate(passport, field, validator):
+    return validator(re.search("{}:([^\n ]*)".format(field), passport)[1]) if re.search("{}:([^\n ]*)".format(field), passport) is not None else False
+print(sum([1 if validate(passport, "byr", lambda value: (1920 <= int(value) <= 2002)) and validate(passport, "iyr", lambda value: (2010 <= int(value) <= 2020)) and validate(passport, "eyr", lambda value: (2020 <= int(value) <= 2030)) and validate(passport, "hgt", lambda value: ((150 <= int(value.strip("cm")) <= 193)) if value[-2:] == "cm" else (59 <= int(value.strip("in")) <= 76)) and validate(passport, "hcl", lambda value: re.fullmatch("#[0-9a-f]{6}", value)) and validate(passport, "ecl", lambda value: value in ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"]) and validate(passport, "pid", lambda value: re.fullmatch("[0-9]{9}", value)) else 0 for passport in ''.join(sys.stdin.readlines()).split("\n\n")]))
