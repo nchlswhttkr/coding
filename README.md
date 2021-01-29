@@ -27,3 +27,13 @@ This also includes questions I have been given in interviews and liked. Publishe
 These are coding problems I've been given in an interview/application. They're submodules linking off to **repositories that may be private**, so you may not be able to see them.
 
 [Problems](./interviews)
+
+### Data Structures and Algorithms
+
+[Examples/Disucssion](./ds-alg/)
+
+### rendezvouz with cassidoo
+
+Interview problems from the [rendezvouz with cassidoo newsletter](https://cassidoo.co/newsletter/).
+
+[Problems](./cassidoo)

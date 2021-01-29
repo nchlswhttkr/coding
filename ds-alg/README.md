@@ -2,7 +2,7 @@
 
 ### Linear-feedback Shift Register
 
-Linear-feedback shift registers can generate a sequences of numbers that is _pseudorandom_ but _deterministic_. With the right arrangement, a register of N bits can produce a sequence of 2<sup>N</sup>-1 before it cycles.
+Linear-feedback shift registers can generate a sequences of numbers that is _pseudorandom_ but _deterministic_. With the right arrangement, a register of **N** bits can produce a sequence of 2<sup>**N**</sup>-1 before it cycles.
 
 The implementation in [`linear-feedback-shift-register/lfsr.c`](./ds-alg/linear-feedback-shift-register/lfsr.c) can produce sequences of up to length 2<sup>20</sup>, using an arrangement of taps for a maximal LFSR.
 
@@ -16,6 +16,7 @@ make
 # 3
 # 1
 make test -s
+# All tests passed!
 ```
 
 Further reading:
