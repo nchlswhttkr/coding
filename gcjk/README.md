@@ -5,7 +5,7 @@ A coding challenge for students, by Google
 **2017 Practice Round** - [Country Leader](#country-leader) / [Vote](#vote) / [Sherlock and Parentheses](#sherlock-and-parentheses) \
 **2017 Round A** - [Square Counting](#square-counting) \
 **2018 Practice Round** - [GBus Count](#gbus-count) / [Googol String](#googol-string) \
-**2018 Roung G** - [Product Triplets](#product-triplets)
+**2018 Round G** - [Product Triplets](#product-triplets)
 
 ---
 

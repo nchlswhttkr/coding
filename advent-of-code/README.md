@@ -529,7 +529,7 @@ Extend your part 1 solution to check that the value for each field meets require
 
 Python's `lambda` keyword is great for quickly declaring these small functions.
 
-**Bonus**: My [very ugly 5-line solution](./2020/04/2.bad.py) for part 2.
+**Bonus**: If you like terse solutions, I had some fun and made a [four line solution](./2020/04/2.bad.py) for part 2!
 
 <details>
 <summary>Answers</summary>
