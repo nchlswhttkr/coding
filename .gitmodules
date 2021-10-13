@@ -13,3 +13,6 @@
 [submodule "interviews/iress-grad-coding-challenge"]
 	path = interviews/iress-grad-coding-challenge
 	url = git@github.com:nchlswhttkr/iress-grad-coding-challenge.git
+[submodule "interviews/octopus-deploy-challenge"]
+	path = interviews/octopus-deploy-challenge
+	url = git@github.com:nchlswhttkr/octopus-deploy-challenge
