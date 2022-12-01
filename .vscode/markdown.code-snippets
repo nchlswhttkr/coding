@@ -3,7 +3,7 @@
     "prefix": "advent-of-code-discussion",
     "scope": "markdown",
     "body": [
-      "## [Day $1, ${2:$CURRENT_YEAR}](https://adventofcode.com/$2/day/$1)",
+      "### [Day $1, ${2:$CURRENT_YEAR}](https://adventofcode.com/$2/day/$1)",
       "",
       "[**Part 1**](./$2/$3/1.py)",
       "",

@@ -32,6 +32,9 @@ A seasonal coding challenge.
 [4](#day-4-2020) /
 [5](#day-5-2020) /
 
+**2022** -
+[1](#day-1-2022)
+
 ---
 
 ## 2018
@@ -46,14 +49,6 @@ Sum the inputs to find the eventual frequency.
 
 Continually iterate through the list of inputs, use some form of hash map to mark which frequencies have already been visited. Find the first repetition.
 
-<details>
-<summary>Answers</summary>
-423
-
-61126
-
-</details>
-
 ### [Day 2, 2018](https://adventofcode.com/2018/day/2)
 
 [**Part 1**](./2018/2/1.py)
@@ -64,14 +59,6 @@ Use a hash map/array to store the number of occurences of each character, increm
 
 Compare all words against each other, and build a string from the characters of the two words that match (same position and value). Output the longest string produced by this to find the closest matching words.
 
-<details>
-<summary>Answers</summary>
-9139
-
-uqcidadzwtnhsljvxyobmkfyr
-
-</details>
-
 ### [Day 3, 2018](https://adventofcode.com/2018/day/3)
 
 [**Part 1**](./2018/3/1.py)
@@ -81,14 +68,6 @@ Store a matrix representing the fabric, mark the number of cuts that cover each 
 [**Part 2**](./2018/3/2.py)
 
 Iterating over each cut, mark each square with the ID of the first cut to use it. Each cut is considered 'isolated' until another cut overlaps it. If/when a future cut runs over this square, mark both the ID of the first cut to use the square as well the ID of the current cut as no longer 'isolated'. After processing, only one cut is left isolated.
-
-<details>
-<summary>Answers</summary>
-121163
-
-943
-
-</details>
 
 ### [Day 4, 2018](https://adventofcode.com/2018/day/4)
 
@@ -106,14 +85,6 @@ Once this has been computed, you can find the guard who sleep the most and deriv
 
 Use the same approach as above to compute the frequency with which each guard sleeps on each minute. Instead of finding the guard that sleeps the most, find the guard who is found sleeping the most on any particular minute of their shift, and return the corresponding answer.
 
-<details>
-<summary>Answers</summary>
-39698
-
-14920
-
-</details>
-
 ### [Day 5, 2018](https://adventofcode.com/2018/day/5)
 
 [**Part 1**](./2018/5/1.py)
@@ -127,14 +98,6 @@ Iterating through the polymer, characters are pushed to the stack so long as the
 Apply the same approach as in part 1, trying with each letter removed (first _Aa_, then _Bb_, etc...). Find the smallest result.
 
 Luckily, Python strings have a `translate` method for each character removal.
-
-<details>
-<summary>Answers</summary>
-11754
-
-4098
-
-</details>
 
 ### [Day 6, 2018](https://adventofcode.com/2018/day/6)
 
@@ -178,24 +141,11 @@ Once all regions have been processed, find the largest valid (finite) region.
 
 Each square of the grid starts off with a budgeted distance of `10000`. Each point/region center draws on this. Acceptable regions start with
 
-<details>
-<summary>Answers</summary>
-5975
-
-38670
-
-</details>
-
 ### [Day 7, 2018](https://adventofcode.com/2018/day/7)
 
 [**Part 1**](./2018/7/1.py)
 
 This requires a topological sort
-
-<details>
-<summary>Answers</summary>
-ABLCFNSXZPRHVEGUYKDIMQTWJO
-</details>
 
 ---
 
@@ -211,14 +161,6 @@ Sum the fuel volumes needed for each module.
 
 Sum the fuel volumes needed for each module, in addition to the fuel volumes needed for all significant fuel volumes (positive volumes).
 
-<details>
-<summary>Answers</summary>
-3317659
-
-4973616
-
-</details>
-
 ### [Day 2, 2019](https://adventofcode.com/2019/day/2)
 
 You don't need to worry about encountering bad opcodes or wrapping back around to the start of the program.
@@ -232,14 +174,6 @@ The tricky case is where you modify the current opcode and accidentally perform 
 [**Part 2**](./2019/02/2.py)
 
 Using your code from part 1, brute force all possible verb and noun combinations for the program until you find one which outputs the target. As the problem says, make sure your program is reset after each run.
-
-<details>
-<summary>Answers</summary>
-8017076
-
-3146
-
-</details>
 
 ### [Day 3, 2019](https://adventofcode.com/2019/day/3)
 
@@ -267,14 +201,6 @@ Similar to the first part, except now you have to record the distance (as in len
 
 The procedure for laying the second wire should be similarly adjusted, recording the length of the two wires when they intersect. Report the shortest combined length needed to intercept.
 
-<details>
-<summary>Answers</summary>
-248
-
-28580
-
-</details>
-
 ### [Day 4, 2019](https://adventofcode.com/2019/day/4)
 
 [**Part 1**](./2019/04/1.py)
@@ -284,14 +210,6 @@ Brute force check each number in the range.
 [**Part 2**](./2019/04/2.py)
 
 Same as part 1. If the string doesn't change when it is sorted, then it is in ascending order. If you put each character in a hash map, as long as 2 exists in the value table then a pair of sequential characters exists (since the digits are ordered).
-
-<details>
-<summary>Answers</summary>
-1748
-
-1180
-
-</details>
 
 ### [Day 5, 2019](https://adventofcode.com/2019/day/5)
 
@@ -305,14 +223,6 @@ Adapt your solution from day 2. I introduced the `interpret_args()` function to 
 
 Extending the solution from part 1 with extra opcodes and their accompanying logic. Luckily, you can reuse the same `interpret_args()` logic without adjusting it.
 
-<details>
-<summary>Answers</summary>
-13210611
-
-584126
-
-</details>
-
 ### [Day 6, 2019](https://adventofcode.com/2019/day/6)
 
 [**Part 1**](./2019/06/1.py)
@@ -322,14 +232,6 @@ Each planet either orbits nothing or orbits one other planet (a parent-child) re
 [**Part 2**](./2019/06/2.py)
 
 Build two lists from `YOU` and `SAN` that go all the way up to the root planet. Find the closest related common parent. The number of "orbital transfers" or jumps will be the length of the paths to the common parent from the two planets.
-
-<details>
-<summary>Answers</summary>
-186597
-
-412
-
-</details>
 
 ### [Day 7, 2019](https://adventofcode.com/2019/day/7)
 
@@ -342,14 +244,6 @@ Set up 5 Intcode machine in series, run for each permutation for each thruster s
 Set up some form of buffer for each Intcode machine (I used queues). As a machine runs, it should write to the next machine's buffer and read from its own buffer.
 
 Run the first machine until it tries to read from an empty buffer. Run the second machine until it tries to read from an empty buffer. Keep repeating this feedback loop until a machine halts.
-
-<details>
-<summary>Answers</summary>
-338603
-
-63103596
-
-</details>
 
 ### [Day 8, 2019](https://adventofcode.com/2019/day/8)
 
@@ -365,14 +259,6 @@ Begin with a transparent image (all `2`s). For every character in the string, fi
 
 Since we have gone from the start of the string and only colour transparent cells, coloured cells from earlier layers will not be overwritten.
 
-<details>
-<summary>Answers</summary>
-1452
-
-PHPEU
-
-</details>
-
 ### [Day 9, 2019](https://adventofcode.com/2019/day/9)
 
 [**Part 1**](./2019/09/1.py)
@@ -382,14 +268,6 @@ Update to your Intcode program to allow reading from larger memory sizes. I impl
 [**Part 2**](./2019/09/2.py)
 
 Run the program with the new input.
-
-<details>
-<summary>Answers</summary>
-2427443564
-
-87221
-
-</details>
 
 ### [Day 10, 2019](https://adventofcode.com/2019/day/10)
 
@@ -405,15 +283,7 @@ Keep the angle-preserving component and instead build a list of asteroids along 
 
 Sort the angles of your origin asteroid, starting from 0deg to 360deg clockwise (that's why I did all the stuff with `get_angle_from_key()`). Loop through the list of asteroid at each angle, "vaporising" the closest one by popping it from the stack.
 
-<details>
-<summary>Answers</summary>
-263
-
-1110
-
-</details>
-
-## [Day 11, 2019](https://adventofcode.com/2019/day/11)
+### [Day 11, 2019](https://adventofcode.com/2019/day/11)
 
 It was at this point that I learned about the fantastic defaultdict in Python.
 
@@ -427,15 +297,7 @@ My program writes to a buffer, and every time there are at least two outputs in 
 
 Record the size of the board the program covers (furthest distances from origin in X and Y axes), and use this generate your image. Rerun with the new white starting square.
 
-<details>
-<summary>Answers</summary>
-2082
-
-FARBCFJK
-
-</details>
-
-## [Day 12, 2019](https://adventofcode.com/2019/day/12)
+### [Day 12, 2019](https://adventofcode.com/2019/day/12)
 
 [**Part 1**](./2019/12/1.py)
 
@@ -447,15 +309,9 @@ Each dimension is independent. Information about the X dimension has no bearing 
 
 Finding the number of steps in cycle for the entire system would take unreasonably long. However, it's possible to find the number of steps for a cycle in each dimension. The period of the system's cycle will be the lowest common multiple of the periods of each dimension's cycle. That is, when the moons return to their original position in the X, Y, and Z dimension at the same time, the system has completed a cycle.
 
-<details>
-<summary>Answers</summary>
-7758
+## 2020
 
-354540398381256
-
-</details>
-
-## [Day 1, 2020](https://adventofcode.com/2020/day/1)
+### [Day 1, 2020](https://adventofcode.com/2020/day/1)
 
 [**Part 1**](./2020/01/1.py)
 
@@ -469,15 +325,7 @@ Finding a trio takes a little longer, but given we're only dealing with 200 numb
 
 The do a little better than O(**N**<sup>3</sup>), we can use a set again to record which numbers have previously appeared. With each new number, try adding it with each existing number, subtracting the sum from 2020. If the difference has _also_ appeared previously, then we have our trio of numbers.
 
-<details>
-<summary>Answers</summary>
-960075
-
-212900130
-
-</details>
-
-## [Day 2, 2020](https://adventofcode.com/2020/day/2)
+### [Day 2, 2020](https://adventofcode.com/2020/day/2)
 
 [**Part 1**](./2020/02/1.py)
 
@@ -487,15 +335,7 @@ Break down the input string for necessary arguments, count which password abide 
 
 Reuse the previous code, but check that the character appears exactly once. You're looking for the XOR operator for this one.
 
-<details>
-<summary>Answers</summary>
-474
-
-745
-
-</details>
-
-## [Day 3, 2020](https://adventofcode.com/2020/day/3)
+### [Day 3, 2020](https://adventofcode.com/2020/day/3)
 
 [**Part 1**](./2020/03/1.py)
 
@@ -509,15 +349,7 @@ Remember that the map wraps around!
 
 Runs the iteration several times for each slope.
 
-<details>
-<summary>Answers</summary>
-207
-
-2655892800
-
-</details>
-
-## [Day 4, 2020](https://adventofcode.com/2020/day/4)
+### [Day 4, 2020](https://adventofcode.com/2020/day/4)
 
 [**Part 1**](./2020/04/1.py)
 
@@ -531,15 +363,7 @@ Python's `lambda` keyword is great for quickly declaring these small functions.
 
 **Bonus**: If you like terse solutions, I had some fun and made a [four line solution](./2020/04/2.bad.py) for part 2!
 
-<details>
-<summary>Answers</summary>
-256
-
-198
-
-</details>
-
-## [Day 5, 2020](https://adventofcode.com/2020/day/5)
+### [Day 5, 2020](https://adventofcode.com/2020/day/5)
 
 [**Part 1**](./2020/05/1.py)
 
@@ -551,10 +375,14 @@ If your language supports string to integer conversion with different bases (in 
 
 In addition to finding the highest occupied seat ID, record which seat IDs you've seen. Afterwards, decrementing from the highest occupied seat until you find an unoccupied seat will give you your answer.
 
-<details>
-<summary>Answers</summary>
-996
+## 2022
 
-671
+### [Day 1, 2022](https://adventofcode.com/2022/day/1)
 
-</details>
+[**Part 1**](./2022/01/1.py)
+
+Sum calories for each elf and select the maximum.
+
+[**Part 2**](./2022/01/2.py)
+
+Sort/heap the calories list and sum the highest 3 values.
