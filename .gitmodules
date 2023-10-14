@@ -16,3 +16,6 @@
 [submodule "interviews/octopus-deploy-challenge"]
 	path = interviews/octopus-deploy-challenge
 	url = git@github.com:nchlswhttkr/octopus-deploy-challenge
+[submodule "interviews/midnyte-city-programming-interview-challenge"]
+	path = interviews/midnyte-city-programming-interview-challenge
+	url = git@github.com:nchlswhttkr/midnyte-city-programming-interview-challenge.git
