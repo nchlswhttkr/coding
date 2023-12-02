@@ -35,6 +35,9 @@ A seasonal coding challenge.
 **2022** -
 [1](#day-1-2022)
 
+**2023** -
+[1](#day-1-2023)
+
 ---
 
 ## 2018
@@ -386,3 +389,23 @@ Sum calories for each elf and select the maximum.
 [**Part 2**](./2022/01/2.py)
 
 Sort/heap the calories list and sum the highest 3 values.
+
+## 2023
+
+### [Day 1, 2023](https://adventofcode.com/2023/day/1)
+
+[**Part 1**](./2023/01/1.py)
+
+It's always fun to use Python's three-way comparisons!
+
+[**Part 2**](./2023/01/2.py)
+
+This is a pretty fun part two compared to previous years. I opted for a brute-force substring search over the preceding 3-5 characters, but a more elegant solution might use some kind of automaton.
+
+<details>
+<summary>Answers</summary>
+55621
+
+53592
+
+</details>
