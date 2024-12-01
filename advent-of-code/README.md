@@ -38,6 +38,9 @@ A seasonal coding challenge.
 **2023** -
 [1](#day-1-2023)
 
+**2024** -
+[1](#day-1-2024)
+
 ---
 
 ## 2018
@@ -407,5 +410,25 @@ This is a pretty fun part two compared to previous years. I opted for a brute-fo
 55621
 
 53592
+
+</details>
+
+## 2024
+
+### [Day 1, 2024](https://adventofcode.com/2024/day/1)
+
+[**Part 1**](./2024/01/1.py)
+
+Thank goodness for Python's `sorted()` function.
+
+[**Part 2**](./2024/01/2.py)
+
+Fun to learn about the `defaultdict` data type, and a nifty trick with a lambda to return a static value. There's probably a much better way to do that...
+
+<details>
+<summary>Answers</summary>
+2430334
+
+28786472
 
 </details>
