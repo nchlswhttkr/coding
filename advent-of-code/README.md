@@ -33,13 +33,14 @@ A seasonal coding challenge.
 [5](#day-5-2020) /
 
 **2022** -
-[1](#day-1-2022)
+[1](#day-1-2022) /
 
 **2023** -
-[1](#day-1-2023)
+[1](#day-1-2023) /
 
 **2024** -
-[1](#day-1-2024)
+[1](#day-1-2024) /
+[2](#day-2-2024) /
 
 ---
 
@@ -430,5 +431,25 @@ Fun to learn about the `defaultdict` data type, and a nifty trick with a lambda 
 2430334
 
 28786472
+
+</details>
+
+### [Day 2, 2024](https://adventofcode.com/2024/day/2)
+
+[**Part 1**](./2024/02/1.py)
+
+It's straightforward to check for a step distance of the right size, the fun bit is ensuring the measures are always increasing/decreasing.
+
+You could iterate through and check this manually, but I prefer taking the fun route - if the levels are always increasing, then sorting them should produce an identical array. Remember to check for decreasing levels as well.
+
+[**Part 2**](./2024/02/2.py)
+
+Too lazy to rejig my check to allow one and only rule failure. Instead, just re-run the `is_safe()` function for every selection of the array excluding a single element.
+
+<details>
+<summary>Answers</summary>
+624
+
+658
 
 </details>
